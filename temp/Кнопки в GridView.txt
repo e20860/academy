@@ -1,0 +1,26 @@
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'header' => 'Действия',
+                'template' => '{view} {update} {delete}',
+                'buttons' => [
+                    'view' => function ($url, $model) {
+                        return Html::a('<span class="btn btn-primary btn-sm">o</span>', $url, [
+                            'title' => 'Посмотреть',
+                        ]);
+                    },
+                    'update' => function ($url, $model) {
+                        return Html::a('<span class="btn btn-secondary btn-sm">/</span>', $url, [
+                            'title' => 'Изменить',
+                        ]);
+                    },
+                    'delete' => function ($url, $model) {
+                        return Html::a('<span class="btn btn-danger btn-sm">x</span>', $url, [
+                            'title' => 'Удалить',
+                            'data' => [
+                                'method' => 'post',
+                                'confirm' =>'Вы уверены, что хотите удалить?',
+                            ]
+                        ]);
+                    },
+                ],                
+          ],

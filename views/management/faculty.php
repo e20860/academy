@@ -13,7 +13,7 @@ $this->title = 'Руководство факультета';
 				</div>
 			</div>
 			<div class="col-sm-1">
-				<img class="img-fluid" src="img/maalogo.jpg" alt="logo">
+                            <img class="img-fluid" src="/web/img/maalogo.jpg" alt="logo">
 			</div>
 		</div>
 		<hr>
@@ -29,7 +29,7 @@ $this->title = 'Руководство факультета';
 		<div class="row">
 			<div class="col-md-3">
               <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                <img class="card-img-top" src="img/ruk/meshkov.jpg" alt="photo">
+                  <img class="card-img-top" src="/web/img/ruk/meshkov.jpg" alt="photo">
                 <div class="card-body">
 				  <h5 class="card-title">Мешков Анатолий Семёнович</h5>
 				  <h6 class="card-subtitle mb-2 text-muted">генерал-майор</h6>
@@ -45,7 +45,7 @@ $this->title = 'Руководство факультета';
 			<!-- Карточки -->
 			<div class="col-md-3">
               <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                <img class="card-img-top" src="img/ruk/chibirev.jpg" alt="photo">
+                  <img class="card-img-top" src="/web/img/ruk/chibirev.jpg" alt="photo">
                 <div class="card-body">
 				  <h5 class="card-title">Чибирев Виктор Александрович</h5>
 				  <h6 class="card-subtitle mb-2 text-muted">генерал-майор</h6>
@@ -61,7 +61,7 @@ $this->title = 'Руководство факультета';
 			<!-- Карточки -->
 			<div class="col-md-3">
               <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                <img class="card-img-top" src="img/ruk/vdovichenko.jpg" alt="photo">
+                <img class="card-img-top" src="/web/img/ruk/vdovichenko.jpg" alt="photo">
                 <div class="card-body">
 				  <h5 class="card-title">Вдовиченко Константин Борисович</h5>
 				  <h6 class="card-subtitle mb-2 text-muted">генерал-майор</h6>
@@ -85,7 +85,7 @@ $this->title = 'Руководство факультета';
 			<!-- Карточки -->
 			<div class="col-md-3">
               <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                <img class="card-img-top" src="img/ruk/kirdyashkin.jpg" alt="photo">
+                  <img class="card-img-top" src="/web/img/ruk/kirdyashkin.jpg" alt="photo">
                 <div class="card-body">
 				  <h5 class="card-title">Кирдяшкин А.В.</h5>
 				  <h6 class="card-subtitle mb-2 text-muted">начальник уч. отдела</h6>
@@ -109,7 +109,7 @@ $this->title = 'Руководство факультета';
 			<!-- Карточки -->
 			<div class="col-md-3">
               <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                <img class="card-img-top" src="img/ruk/arnautov.jpg" alt="photo">
+                  <img class="card-img-top" src="/web/img/ruk/arnautov.jpg" alt="photo">
                 <div class="card-body">
 				  <h5 class="card-title">Арнаутов В.П.</h5>
 				  <h6 class="card-subtitle mb-2 text-muted">начальник курса</h6>
@@ -122,7 +122,7 @@ $this->title = 'Руководство факультета';
 			<!-- Карточки -->
 			<div class="col-md-3">
               <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                <img class="card-img-top" src="img/ruk/lutsenko.jpg" alt="photo">
+                  <img class="card-img-top" src="/web/img/ruk/lutsenko.jpg" alt="photo">
                 <div class="card-body">
 				  <h5 class="card-title">Луценко Н.А.</h5>
 				  <h6 class="card-subtitle mb-2 text-muted">начальник курса</h6>

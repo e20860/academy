@@ -14,7 +14,7 @@ $this->title = 'Преподаватели';
 				</div>
 			</div>
 			<div class="col-sm-1">
-				<img class="img-fluid" src="img/maalogo.jpg" alt="logo">
+                            <img class="img-fluid" src="/web/img/maalogo.jpg" alt="logo">
 			</div>
 		</div>
 		<hr>
@@ -22,7 +22,7 @@ $this->title = 'Преподаватели';
 		<!-- Карточки -->
 			<div class="col-md-3">
               <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                <img class="card-img-top" src="img/prep/gusak.jpg" alt="photo">
+                  <img class="card-img-top" src="/web/img/prep/gusak.jpg" alt="photo">
                 <div class="card-body">
 				  <h5 class="card-title">Гусак В.В.</h5>
 				  <h6 class="card-subtitle mb-2 text-muted">УПД</h6>
@@ -34,7 +34,7 @@ $this->title = 'Преподаватели';
 			<!-- Карточки -->
 			<div class="col-md-3">
               <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                <img class="card-img-top" src="img/prep/barabanov.jpg" alt="photo">
+                  <img class="card-img-top" src="/web/img/prep/barabanov.jpg" alt="photo">
                 <div class="card-body">
 				  <h5 class="card-title">Барабанов В.В.</h5>
 				  <h6 class="card-subtitle mb-2 text-muted">Не помню</h6>
@@ -46,7 +46,7 @@ $this->title = 'Преподаватели';
 			<!-- Карточки -->
 			<div class="col-md-3">
               <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                <img class="card-img-top" src="img/prep/kobylin.jpg" alt="photo">
+                  <img class="card-img-top" src="/web/img/prep/kobylin.jpg" alt="photo">
                 <div class="card-body">
 				  <h5 class="card-title">Кобылин Ю.В.</h5>
 				  <h6 class="card-subtitle mb-2 text-muted">Стрельба и УО</h6>
@@ -58,7 +58,7 @@ $this->title = 'Преподаватели';
 			<!-- Карточки -->
 			<div class="col-md-3">
               <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                <img class="card-img-top" src="img/prep/garasyuk.jpg" alt="photo">
+                  <img class="card-img-top" src="/web/img/prep/garasyuk.jpg" alt="photo">
                 <div class="card-body">
 				  <h5 class="card-title">Гарасюк В.В.</h5>
 				  <h6 class="card-subtitle mb-2 text-muted">Тактика</h6>
@@ -70,7 +70,7 @@ $this->title = 'Преподаватели';
 			<!-- Карточки -->
 			<div class="col-md-3">
               <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                <img class="card-img-top" src="img/prep/nikonov.jpg" alt="photo">
+                  <img class="card-img-top" src="/web/img/prep/nikonov.jpg" alt="photo">
                 <div class="card-body">
 				  <h5 class="card-title">Никонов Н.П.</h5>
 				  <h6 class="card-subtitle mb-2 text-muted">Не помню</h6>
@@ -82,7 +82,7 @@ $this->title = 'Преподаватели';
 			<!-- Карточки -->
 			<div class="col-md-3">
               <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                <img class="card-img-top" src="img/prep/gorokhov.jpg" alt="photo">
+                  <img class="card-img-top" src="/web/img/prep/gorokhov.jpg" alt="photo">
                 <div class="card-body">
 				  <h5 class="card-title">Горохов М.Е.</h5>
 				  <h6 class="card-subtitle mb-2 text-muted">не помню</h6>
@@ -94,7 +94,7 @@ $this->title = 'Преподаватели';
 			<!-- Карточки -->
 			<div class="col-md-3">
               <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                <img class="card-img-top" src="img/prep/savelov.jpg" alt="photo">
+                  <img class="card-img-top" src="/web/img/prep/savelov.jpg" alt="photo">
                 <div class="card-body">
 				  <h5 class="card-title">Савёлов Е.М.</h5>
 				  <h6 class="card-subtitle mb-2 text-muted">УПД</h6>

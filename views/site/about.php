@@ -15,7 +15,7 @@ $this->title = 'О сайте';
             </div>
         </div>
         <div class="col-sm-1">
-            <img class="img-fluid " src="img/maa1.png" alt="logo">
+            <img class="img-fluid " src="/web/img/maa1.png" alt="logo">
         </div>
     </div>
     <hr>
@@ -53,7 +53,7 @@ $this->title = 'О сайте';
 		<!-- разделитель карточек -->
 		<div class="row">
 			<div class="col-sm-2">
-				<img class="img-fluid rounded-circle" src="img/about/savenko.jpg" alt="savenko">
+                            <img class="img-fluid rounded-circle" src="/web/img/about/savenko.jpg" alt="savenko">
 			</div>
 			<div class="col-sm-1">
 			</div>
@@ -72,7 +72,7 @@ $this->title = 'О сайте';
 		<!-- разделитель карточек -->
 		<div class="row">
 			<div class="col-sm-2">
-				<img class="img-fluid rounded-circle" src="img/about/slavko.jpg" alt="slavko">
+                            <img class="img-fluid rounded-circle" src="/web/img/about/slavko.jpg" alt="slavko">
 			</div>
 			<div class="col-sm-1">
 			</div>

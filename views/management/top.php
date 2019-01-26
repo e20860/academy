@@ -13,7 +13,7 @@ $this->title = 'Руководство Академии';
                         </div>
                 </div>
                 <div class="col-sm-1">
-                        <img class="img-fluid" src="img/maalogo.jpg" alt="logo">
+                    <img class="img-fluid" src="/web/img/maalogo.jpg" alt="logo">
                 </div>
         </div>
         <hr>
@@ -21,7 +21,7 @@ $this->title = 'Руководство Академии';
         <!-- Начальник -->
         <div class="row">
                 <div class="col-sm-3">
-                        <img class="img-fluid" src="img/ruk/i-338.jpg" alt="plyshevsky">
+                    <img class="img-fluid" src="/web/img/ruk/i-338.jpg" alt="plyshevsky">
                 </div>
                 <div class="col-sm-9">
                         <p class="h3 text-center text-info">Плышевский Борис Алексеевич</p>
@@ -44,7 +44,7 @@ $this->title = 'Руководство Академии';
         <!-- разделитель карточек -->
         <div class="row">
                 <div class="col-sm-2">
-                        <img class="img-fluid" src="img/ruk/baranov.jpg" alt="photo">
+                    <img class="img-fluid" src="/web/img/ruk/baranov.jpg" alt="photo">
                 </div>
                 <div class="col-sm-1">
                 </div>
@@ -58,7 +58,7 @@ $this->title = 'Руководство Академии';
         <!-- разделитель карточек -->
         <div class="row">
                 <div class="col-sm-2">
-                        <img class="img-fluid" src="img/ruk/denisenko.jpg" alt="photo">
+                    <img class="img-fluid" src="/web/img/ruk/denisenko.jpg" alt="photo">
                 </div>
                 <div class="col-sm-1">
                 </div>
@@ -74,7 +74,7 @@ $this->title = 'Руководство Академии';
         <!-- разделитель карточек -->
         <div class="row">
                 <div class="col-sm-2">
-                        <img class="img-fluid" src="img/ruk/demidenko.jpg" alt="photo">
+                    <img class="img-fluid" src="/web/img/ruk/demidenko.jpg" alt="photo">
                 </div>
                 <div class="col-sm-1">
                 </div>
@@ -96,7 +96,7 @@ $this->title = 'Руководство Академии';
         <!-- разделитель карточек -->
         <div class="row">
                 <div class="col-sm-2">
-                        <img class="img-fluid" src="img/ruk/kondratiev.jpg" alt="photo">
+                    <img class="img-fluid" src="/web/img/ruk/kondratiev.jpg" alt="photo">
                 </div>
                 <div class="col-sm-1">
                 </div>
@@ -110,7 +110,7 @@ $this->title = 'Руководство Академии';
         <!-- разделитель карточек -->
         <div class="row">
                 <div class="col-sm-2">
-                        <img class="img-fluid" src="img/ruk/luchaninov.jpg" alt="photo">
+                    <img class="img-fluid" src="/web/img/ruk/luchaninov.jpg" alt="photo">
                 </div>
                 <div class="col-sm-1">
                 </div>
@@ -124,7 +124,7 @@ $this->title = 'Руководство Академии';
         <!-- разделитель карточек -->
         <div class="row">
                 <div class="col-sm-2">
-                        <img class="img-fluid" src="img/ruk/gusarov.jpg" alt="photo">
+                    <img class="img-fluid" src="/web/img/ruk/gusarov.jpg" alt="photo">
                 </div>
                 <div class="col-sm-1">
                 </div>

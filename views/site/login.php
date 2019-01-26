@@ -7,13 +7,23 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Login';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Вход на сайт';
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="row">
+        <div class="col-sm-11">
+            <div class="text-center">
+                <h1 class="text-primary"><?= Html::encode($this->title) ?></h1>
+            </div>
+        </div>
+        <div class="col-sm-1">
+            <img class="img-fluid " src="/web/img/maa1.png" alt="logo">
+        </div>
+    </div>
+    <hr>
 
-    <p>Please fill out the following fields to login:</p>
+    <p>Введите Ваши учётные данные (логин и пароль) в поля формы:</p>
 
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
@@ -34,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="form-group">
             <div class="col-lg-offset-1 col-lg-11">
-                <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                <?= Html::submitButton('Подтвердить', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
             </div>
         </div>
 

@@ -12,7 +12,17 @@ $this->title = 'Регистрация';
 //$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
-    <h1 class="text-primary text-center"><?= Html::encode($this->title) ?></h1>
+     <div class="row">
+        <div class="col-sm-11">
+            <div class="text-center">
+                <h1 class="text-primary"><?= Html::encode($this->title) ?></h1>
+            </div>
+        </div>
+        <div class="col-sm-1">
+            <img class="img-fluid " src="/web/img/maa1.png" alt="logo">
+        </div>
+    </div>
+    <hr>
 
     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
 

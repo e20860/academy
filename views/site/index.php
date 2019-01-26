@@ -3,11 +3,23 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Главная страница';
-$this->registerCssFile('css/carouselle.css');
+$this->registerCssFile('/css/carouselle.css');
 ?>
 <div class="site-index">
 
     <main role="main" class="container">
+    <div class="row">
+            <div class="col-sm-11">
+                    <div class="text-center">
+                        <h1 class="display-6 text-primary">МИХАЙЛОВСКАЯ АРТИЛЛЕРИЙСКАЯ АКАДЕМИЯ</h1>
+                        <h4 class="text-primary">ALMA MATER</h4>
+                    </div>
+            </div>
+            <div class="col-sm-1">
+                <img class="img-fluid" src="/web/img/maalogo.jpg" alt="logo">
+            </div>
+    </div>
+    <hr>    
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -20,7 +32,6 @@ $this->registerCssFile('css/carouselle.css');
             <img class="first-slide h-100" src= "/web/img/main.jpg" alt="N slide">
             <div class="container">
               <div class="carousel-caption text-left">
-                <h2>МИХАЙЛОВСКАЯ АРТИЛЛЕРИЙСКАЯ АКАДЕМИЯ</h2>
                 <p class="h1">Те, кто поступил в академию в 1991 году и выпустился в 1994-м...</p>
               </div>
             </div>
@@ -30,7 +41,6 @@ $this->registerCssFile('css/carouselle.css');
             <img class="first-slide h-100" src= "/web/img/main.jpg" alt="N slide">
             <div class="container">
               <div class="carousel-caption text-left">
-                <h2>МИХАЙЛОВСКАЯ АРТИЛЛЕРИЙСКАЯ АКАДЕМИЯ</h2>
                 <p class="h1">в 2019-м находясь геграфически в разных местах...</p>
               </div>
             </div>
@@ -40,7 +50,6 @@ $this->registerCssFile('css/carouselle.css');
             <img class="first-slide h-100" src= "/web/img/main.jpg" alt="N slide">
             <div class="container">
               <div class="carousel-caption text-left">
-                <h2>МИХАЙЛОВСКАЯ АРТИЛЛЕРИЙСКАЯ АКАДЕМИЯ</h2>
                 <p class="h1">... совместно отмечают 25-летие выпуска!!!</p>
               </div>
             </div>
@@ -65,18 +74,24 @@ $this->registerCssFile('css/carouselle.css');
 		  </div>
           <div class="col-md-4">
             <h2>1994</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p>Обогащённые знаниями, полученными за три трудных года обучения, со светлыми 
+            одухотворёнными лицами, собрав в охапку семьи и нехитрый домашний скарб, разъезжались они 
+            по городам и весям в соответствии с полученными назначениями сеять разумное, доброе, вечное...</p>
           </div>
 		  <div class="col-md-2"> 	
 			<img class="img-fluid" src="/web/img/cat2019.jpg" alt="catimg">
 		  </div>
           <div class="col-md-4">
             <h2>2019</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p>... пожав урожай своих посевов, окрепшие духовно, познавшие радость побед 
+                и горечь поражений, с изменившимся внешним видом, но по прежнему горящими 
+                глазами, собирались они вспомнить молодость, поделиться жизненной энергией
+            , набраться сил для дальнейших свершений.</p>
           </div>
         </div>
 
         <hr>
 
       </div> <!-- /container -->
+    </main>
 </div>

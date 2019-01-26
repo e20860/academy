@@ -1,0 +1,2 @@
+[Wed Jan 23 19:50:31.100703 2019] [core:alert] [pid 2148:tid 904] [client 127.0.0.1:49969] D:/WebWorksPHP/maa94meet.ru/.htaccess: RewriteRule: bad argument line './web/index.php'
+[Wed Jan 23 21:06:03.401566 2019] [php7:error] [pid 2148:tid 916] [client 127.0.0.1:50371] PHP Fatal error:  Uncaught Error: Class 'Request' not found in D:\\WebWorksPHP\\maa94meet.ru\\config\\web.php:5\nStack trace:\n#0 D:\\WebWorksPHP\\maa94meet.ru\\web\\index.php(10): require()\n#1 {main}\n  thrown in D:\\WebWorksPHP\\maa94meet.ru\\config\\web.php on line 5, referer: http://maa94meet.ru/web/

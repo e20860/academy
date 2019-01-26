@@ -59,7 +59,7 @@ class Menu
     protected static function renderMenu($tree)
     {
         $menu = [];
-        $surl = '/web/index.php?r=';
+        $surl = '/';   //'/web/index.php?r=';
         foreach ($tree as $item) {
             if(isset($item['childs'])) {
                 $items = [];
