@@ -6,11 +6,33 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\GraduatesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $commander array */
+/* @var $unitList array*/
 
 $this->title = $unit['name'];
 //$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="graduates-index">
+	<!-- Modal begin -->
+	<div class="modal fade modal-xl" id="infoStudent" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Подробнее о выпускнике</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                    </div>
+                    <div class="modal-body" id="person-info">            
+                        <!-- Modal content -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="mclose" data-dismiss="modal">Выйти</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+	<!-- Modal end -->
 
     <h1 class="text-primary text-center"><?= Html::encode($this->title) ?></h1>
     <hr>
@@ -28,7 +50,10 @@ $this->title = $unit['name'];
 	        <h6 class="card-subtitle mb-2 text-muted">Командир отделения</h6>
                 <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary showModal" data-old-img="img/portr/14_13.jpg" data-new-img="img/portr/ЦЫГАНОВ.jpg">Подробнее</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary showModal"
+                            data-id="<?= $commander['id']?>">
+                        Подробнее
+                    </button>
                 </div>
                 </div>
                 </div>
@@ -43,7 +68,7 @@ $this->title = $unit['name'];
             <p class="lead"> <?= $unit['descr']?></p>
             <hr>
             <div class="text-right">
-               <a href="#" class="btn btn-outline-primary" role="button" aria-pressed="true">
+               <a href="/graduates/gallery?id=<?= $unit['id'] ?>" class="btn btn-outline-primary" role="button" aria-pressed="true">
                    Посмотреть фотографии отделения</a>
             </div>
         </div>
@@ -68,12 +93,16 @@ $this->title = $unit['name'];
                                         . mb_substr($person['sur'],0,1) . '. ';
                                       ?></h5>
                       <p class="card-text"><?php 
-                            echo 'Проживает в г. ' . $person['local']; 
+                            echo 'слушатель'; 
                            ?></p>
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                                                    <button type="button" class="btn btn-sm btn-outline-secondary showModal" data-old-img="img/portr/14_01.jpg" data-new-img="img/portr/АРТЕМОВ.jpg">Подробнее</button>                    </div>
-                        <small class="text-muted">Тили - тили</small>
+                            <button type="button" class="btn btn-sm btn-outline-secondary showModal"
+                                    data-id="<?= $person['id']?>">
+                                Подробнее
+                            </button>                    
+                        </div>
+                        <small class="text-muted"><?= $person['local'] ?></small>
                       </div>
                     </div>
                   </div>
@@ -84,8 +113,19 @@ $this->title = $unit['name'];
         </div>
         </div>
 <!-- ---------------------------------------- -->
-</main>                   
-    
-    
-
+</main>       
+<?php    
+$js = <<< JS
+    $(".showModal").click(function(){
+        var curId = $(this).attr("data-id");
+        var urlFrom = '/graduates/person?id=' + curId;
+        $.get(urlFrom, function(data){
+           // var data = $.parseJSON(data);
+            $("#person-info").html(data);
+        });
+        $("#infoStudent").modal("show");
+    });
+JS;
+$this->registerJs($js)    
+?>
 </div>
