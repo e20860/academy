@@ -51,9 +51,9 @@ class Menu11 extends \yii\db\ActiveRecord
             ],
             ],                
             ['label' => 'Мультимедиа', 'items' => [
-                ['label' => 'Разные фото', 'url' => ['/site/index']],
-                ['label' => 'Галерея встречи', 'url' => ['/site/index']],
-                ['label' => 'Видео', 'url' => ['/site/index']],
+                ['label' => 'Разные фото', 'url' => ['/mmedia/gals']],
+                ['label' => 'Галерея встречи', 'url' => ['/mmedia/meet']],
+                ['label' => 'Видео', 'url' => ['/mmedia/video']],
             ],
             ],                
             ['label' => 'О сайте', 'url' => ['/site/about']],

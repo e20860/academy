@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $list Список выводимых данных*/
 
 $this->title = 'Наши достижения';
 ?>

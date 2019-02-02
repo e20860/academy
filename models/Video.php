@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property int $ord
+ * @property string $name
  * @property string $descr
  * @property string $link
  */
@@ -43,6 +44,7 @@ class Video extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'ord' => 'Ord',
+            'name' => 'Name',
             'descr' => 'Descr',
             'link' => 'Link',
         ];
