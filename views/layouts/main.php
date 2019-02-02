@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
 use yii\widgets\Breadcrumbs;
-use app\models\Menu;
+use app\models\Menu11;
 use app\assets\AppAsset;
 AppAsset::register($this);
 ?>
@@ -40,7 +40,7 @@ AppAsset::register($this);
     ]);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right bg-dark'],
-        'items' => Menu::getMenuData(),
+        'items' => Menu11::getMenuArray(),
     ]);
     NavBar::end();
     ?>

@@ -1,7 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
-
+/* @var $tlist array Массив данных о преподавателях*/
 $this->title = 'Преподаватели';
 
 ?>
@@ -20,92 +20,20 @@ $this->title = 'Преподаватели';
 		<hr>
 		<div class="row">
 		<!-- Карточки -->
-			<div class="col-md-3">
-              <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                  <img class="card-img-top" src="/web/img/prep/gusak.jpg" alt="photo">
-                <div class="card-body">
-				  <h5 class="card-title">Гусак В.В.</h5>
-				  <h6 class="card-subtitle mb-2 text-muted">УПД</h6>
-                    <div class="d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-              </div>
-			</div>
-			<!-- Карточки -->
-			<div class="col-md-3">
-              <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                  <img class="card-img-top" src="/web/img/prep/barabanov.jpg" alt="photo">
-                <div class="card-body">
-				  <h5 class="card-title">Барабанов В.В.</h5>
-				  <h6 class="card-subtitle mb-2 text-muted">Не помню</h6>
-                    <div class="d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-              </div>
-			</div>
-			<!-- Карточки -->
-			<div class="col-md-3">
-              <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                  <img class="card-img-top" src="/web/img/prep/kobylin.jpg" alt="photo">
-                <div class="card-body">
-				  <h5 class="card-title">Кобылин Ю.В.</h5>
-				  <h6 class="card-subtitle mb-2 text-muted">Стрельба и УО</h6>
-                    <div class="d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-              </div>
-			</div>
-			<!-- Карточки -->
-			<div class="col-md-3">
-              <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                  <img class="card-img-top" src="/web/img/prep/garasyuk.jpg" alt="photo">
-                <div class="card-body">
-				  <h5 class="card-title">Гарасюк В.В.</h5>
-				  <h6 class="card-subtitle mb-2 text-muted">Тактика</h6>
-                    <div class="d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-              </div>
-			</div>
-			<!-- Карточки -->
-			<div class="col-md-3">
-              <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                  <img class="card-img-top" src="/web/img/prep/nikonov.jpg" alt="photo">
-                <div class="card-body">
-				  <h5 class="card-title">Никонов Н.П.</h5>
-				  <h6 class="card-subtitle mb-2 text-muted">Не помню</h6>
-                    <div class="d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-              </div>
-			</div>
-			<!-- Карточки -->
-			<div class="col-md-3">
-              <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                  <img class="card-img-top" src="/web/img/prep/gorokhov.jpg" alt="photo">
-                <div class="card-body">
-				  <h5 class="card-title">Горохов М.Е.</h5>
-				  <h6 class="card-subtitle mb-2 text-muted">не помню</h6>
-                    <div class="d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-              </div>
-			</div>
-			<!-- Карточки -->
-			<div class="col-md-3">
-              <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
-                  <img class="card-img-top" src="/web/img/prep/savelov.jpg" alt="photo">
-                <div class="card-body">
-				  <h5 class="card-title">Савёлов Е.М.</h5>
-				  <h6 class="card-subtitle mb-2 text-muted">УПД</h6>
-                    <div class="d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-              </div>
-			</div>
-			<!-- Карточки -->
-
-		<hr>
+                <?php foreach($tlist as $person): ?>
+		<div class="col-md-3">
+                    <div class="card mb-3 shadow-sm img-thumbnail max-width: 100px">
+                        <img class="card-img-top" src="/web/img/prep/<?= $person['img'] ?>" alt="photo">
+                      <div class="card-body">
+                                        <h5 class="card-title"><?= $person['name'] ?></h5>
+                                        <h6 class="card-subtitle mb-2 text-muted"><?= $person['subject'] ?></h6>
+                          <div class="d-flex justify-content-between align-items-center">
+                        </div>
+                      </div>
+                    </div>
+		</div>
+                <?php endforeach;?>
+                <hr>
 		</div>
       </main>    
 </div>

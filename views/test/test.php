@@ -8,12 +8,12 @@ $this->title = 'Тестовая';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="test-menu">
-    <h1>Контакты</h1>
+    <h1>Тестовая страничка</h1>
     <hr>
         
     <pre>
         <?php
-        print_r($model);
+        print_r($list);
         ?>
     </pre>
     

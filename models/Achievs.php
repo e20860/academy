@@ -46,10 +46,10 @@ class Achievs extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'graduates_id' => 'Graduates ID',
-            'type' => 'Type',
-            'descr' => 'Descr',
+            'id' => '№',
+            'graduates_id' => 'Выпукник',
+            'type' => 'Достижение',
+            'descr' => 'Описание',
         ];
     }
 

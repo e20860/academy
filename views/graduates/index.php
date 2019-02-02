@@ -102,7 +102,10 @@ $this->title = $unit['name'];
                                 Подробнее
                             </button>                    
                         </div>
-                        <small class="text-muted"><?= $person['local'] ?></small>
+                        <small class="text-muted"><?php
+                        echo $person['rip']? '<img src="/web/img/candle_small.jpg">'
+                                :$person['local'] ?>
+                        </small>
                       </div>
                     </div>
                   </div>
