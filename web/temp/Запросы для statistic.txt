@@ -1,0 +1,52 @@
+    public function actionAcv()
+    {
+        return $this->render('acv');
+    }
+
+    public function actionGal()
+    {
+        return $this->render('gal');
+    }
+
+    public function actionGrad()
+    {
+        return $this->render('grad');
+    }
+
+    public function actionLoc()
+    {
+        return $this->render('loc');
+    }
+
+    public function actionUsr()
+    {
+        return $this->render('usr');
+    }
+
+    public function actionVid()
+    {
+        return $this->render('vid');
+    }
+    /**
+     * Обновляет статистическую информацию для геостраницы
+     */
+    public function updateGeoStat()
+    {
+       $sql = "SELECT `town`, CONCAT('[',`crd`,']') AS `crd`,"
+                . "(SELECT COUNT(*) FROM graduates "
+                . "WHERE graduates.locals_id = locals.id AND NOT graduates.rip) AS quant, "
+                . "(SELECT GROUP_CONCAT(`fam` SEPARATOR '-') FROM graduates "
+                . "WHERE `locals_id` =locals.id GROUP BY `locals_id`) AS `hint` "
+                . "FROM locals WHERE locals.id <> 50 ";
+        $list = \Yii::$app->db->createCommand($sql)
+            ->queryAll();
+
+        $json = json_encode($list,JSON_UNESCAPED_UNICODE);
+        $json = preg_replace('/"\[/m','[', $json);
+        $json = preg_replace('/\]"/m',']', $json);
+
+        $file = Yii::$app->basePath .'\web\temp\statistic.txt';
+        file_put_contents($file, $json);
+        return $this->render('test',[
+            'json' => $json,
+        ]);
