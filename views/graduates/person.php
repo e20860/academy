@@ -67,6 +67,18 @@ if(file_exists($photo2)) {
                         <?= $person['info'] ?>
                     </p>    
                     </div>
+                    <?php if($person['rip']):?>
+                    <div class="row text-left">
+                        <div class="col-sm-8">
+                            <strong>
+                                Ушёл из жизни...
+                            </strong>  
+                        </div>
+                        <div class="col-sm-4">
+                            <img class="img-fluid" src="/web/img/candle.jpg" alt="свеча">
+                        </div>                        
+                    </div>
+                    <?php endif;?>
                     <br>
                     <hr>
             </div>

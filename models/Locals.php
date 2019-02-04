@@ -43,10 +43,10 @@ class Locals extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'country' => 'Country',
-            'town' => 'Town',
-            'crd' => 'Crd',
+            'id' => '№ пп',
+            'country' => 'Страна',
+            'town' => 'Город (нас пункт)',
+            'crd' => 'Координаты (Широта,Долгота)',
         ];
     }
 

@@ -1,0 +1,393 @@
+Array
+(
+    [Герои Российской Федерации] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [graduates_id] => 45
+                    [type] => 1
+                    [descr] => Герой Российской федерации
+                    [graduates] => Array
+                        (
+                            [id] => 45
+                            [units_id] => 4
+                            [fam] => Корольков
+                            [nam] => Аркадий
+                            [sur] => Михайлович
+                            [photo1] => 45_01.jpg
+                            [photo2] => 45_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 1
+                        )
+
+                )
+
+        )
+
+    [Имеют генеральские звания] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 4
+                    [graduates_id] => 24
+                    [type] => 2
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 24
+                            [units_id] => 2
+                            [fam] => Поплавский
+                            [nam] => Евгений
+                            [sur] => Валентинович
+                            [photo1] => 24_01.jpg
+                            [photo2] => 24_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 4
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => 5
+                    [graduates_id] => 49
+                    [type] => 2
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 49
+                            [units_id] => 4
+                            [fam] => Побирохин
+                            [nam] => Сергей
+                            [sur] => Петрович
+                            [photo1] => 49_01.jpg
+                            [photo2] => 49_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 1
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [id] => 6
+                    [graduates_id] => 106
+                    [type] => 2
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 106
+                            [units_id] => 8
+                            [fam] => Тимошенко
+                            [nam] => Родион
+                            [sur] => Иванович
+                            [photo1] => 106_01.jpg
+                            [photo2] => 106_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 7
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [id] => 7
+                    [graduates_id] => 145
+                    [type] => 2
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 145
+                            [units_id] => 11
+                            [fam] => Моргун
+                            [nam] => Владимир
+                            [sur] => Сергеевич
+                            [photo1] => 145_01.jpg
+                            [photo2] => 145_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 1
+                        )
+
+                )
+
+        )
+
+    [Закончили академию ГШ] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 8
+                    [graduates_id] => 24
+                    [type] => 3
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 24
+                            [units_id] => 2
+                            [fam] => Поплавский
+                            [nam] => Евгений
+                            [sur] => Валентинович
+                            [photo1] => 24_01.jpg
+                            [photo2] => 24_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 4
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => 9
+                    [graduates_id] => 49
+                    [type] => 3
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 49
+                            [units_id] => 4
+                            [fam] => Побирохин
+                            [nam] => Сергей
+                            [sur] => Петрович
+                            [photo1] => 49_01.jpg
+                            [photo2] => 49_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 1
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [id] => 10
+                    [graduates_id] => 145
+                    [type] => 3
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 145
+                            [units_id] => 11
+                            [fam] => Моргун
+                            [nam] => Владимир
+                            [sur] => Сергеевич
+                            [photo1] => 145_01.jpg
+                            [photo2] => 145_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 1
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [id] => 11
+                    [graduates_id] => 3
+                    [type] => 3
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 3
+                            [units_id] => 1
+                            [fam] => Бочкарев
+                            [nam] => Александр
+                            [sur] => Владимирович
+                            [photo1] => 3_01.jpg
+                            [photo2] => 3_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 4
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [id] => 12
+                    [graduates_id] => 116
+                    [type] => 3
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 116
+                            [units_id] => 9
+                            [fam] => Мельник
+                            [nam] => Виктор
+                            [sur] => Федорович
+                            [photo1] => 116_01.jpg
+                            [photo2] => 116_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 1
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [id] => 13
+                    [graduates_id] => 123
+                    [type] => 3
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 123
+                            [units_id] => 10
+                            [fam] => Голубев
+                            [nam] => Александр
+                            [sur] => Львович
+                            [photo1] => 123_01.jpg
+                            [photo2] => 123_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 1
+                        )
+
+                )
+
+            [6] => Array
+                (
+                    [id] => 14
+                    [graduates_id] => 88
+                    [type] => 3
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 88
+                            [units_id] => 7
+                            [fam] => Екимов
+                            [nam] => Александр
+                            [sur] => Александрович
+                            [photo1] => 88_01.jpg
+                            [photo2] => 88_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 21
+                        )
+
+                )
+
+            [7] => Array
+                (
+                    [id] => 15
+                    [graduates_id] => 118
+                    [type] => 3
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 118
+                            [units_id] => 9
+                            [fam] => Семенюта
+                            [nam] => Сергей
+                            [sur] => Петрович
+                            [photo1] => 118_01.jpg
+                            [photo2] => 118_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 21
+                        )
+
+                )
+
+            [8] => Array
+                (
+                    [id] => 16
+                    [graduates_id] => 19
+                    [type] => 3
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 19
+                            [units_id] => 2
+                            [fam] => Землянский
+                            [nam] => Александр
+                            [sur] => Дмитриевич
+                            [photo1] => 19_01.jpg
+                            [photo2] => 19_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 1
+                        )
+
+                )
+
+            [9] => Array
+                (
+                    [id] => 17
+                    [graduates_id] => 45
+                    [type] => 3
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 45
+                            [units_id] => 4
+                            [fam] => Корольков
+                            [nam] => Аркадий
+                            [sur] => Михайлович
+                            [photo1] => 45_01.jpg
+                            [photo2] => 45_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 1
+                        )
+
+                )
+
+        )
+
+    [Имеют учёные степени] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 2
+                    [graduates_id] => 86
+                    [type] => 4
+                    [descr] => 
+                    [graduates] => Array
+                        (
+                            [id] => 86
+                            [units_id] => 7
+                            [fam] => Гимадеев
+                            [nam] => Руслан
+                            [sur] => Габдулфарович
+                            [photo1] => 86_01.jpg
+                            [photo2] => 86_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 26
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [id] => 3
+                    [graduates_id] => 72
+                    [type] => 4
+                    [descr] => Доктор наук, профессор
+                    [graduates] => Array
+                        (
+                            [id] => 72
+                            [units_id] => 6
+                            [fam] => Ковалев
+                            [nam] => Сергей
+                            [sur] => Николаевич
+                            [photo1] => 72_01.jpg
+                            [photo2] => 72_02.jpg
+                            [info] => Дополнительная информация о выпускнике - отсутствует
+                            [rip] => 0
+                            [locals_id] => 2
+                        )
+
+                )
+
+        )
+
+)

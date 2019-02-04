@@ -3,6 +3,8 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+use yii\captcha\Captcha;
 
 $this->title = 'О сайте';
 //$this->params['breadcrumbs'][] = $this->title;
@@ -30,9 +32,10 @@ $this->title = 'О сайте';
                     </div>
             </div>
             <p class="lead text-left ml-3 mr-3">
-                Сайт создан для информационного сопровождения встречи выпускников 
-                Военной Артиллерийской академии 01.06.2019 г., 
-                посвящённой 25-летию выпуска командного факультета академии 1994 года
+                &nbsp;&nbsp;&nbsp;&nbsp;Сайт создан для информационного сопровождения встречи выпускников 
+                Военной Артиллерийской академии 1994 года, посвящённой 25-летию выпуска 
+                командного факультета, назначенной на 01.06.2019 г., 
+                
             </p>
           </div>
         </div>		
@@ -93,31 +96,34 @@ $this->title = 'О сайте';
 				
 			</div>
 			<div class="col-sm-9">
-				<p class="h2 text-left text-secondary">Обратная связь</p>
+				<p class="h2 text-left text-success">Обратная связь</p>
 			</div>
 		</div>
 		<hr>
 			<p class="lead">Если у Вас есть вопросы или предложения по оформлению сайта или Вы нашли какую-либо неточность, которую необходимо исправить, пожалуйста, заполните форму. </p>
 		<hr>
-		<form>
-		  <div class="form-group row">
-			<label for="inputEmail" class="col-sm-2 col-form-label">Ваш email</label>
-			<div class="col-sm-10">
-			  <input type="email" class="form-control" id="inputEmail3" placeholder="Email"  required="required">
-			</div>
-		  </div>
-		  <div class="form-group row">
-			<label for="inputText" class="col-sm-2 col-form-label">Содержание</label>
-			<div class="col-sm-10">
-			  <textarea class="form-control" id="inputText" rows="3">
-			  </textarea>
-			</div>
-		  </div>
-		  <div class="form-group row">
-			<div class="col-sm-12 text-right">
-				<button type="submit" class="btn btn-primary">Отправить</button>
-			</div>	
-		  </div>
-		</form>
+                <?php if (Yii::$app->session->hasFlash('feedbackFormSubmitted')): ?>
+
+                        <div class="alert alert-success">
+                            Спасибо за Ваше сообщение. Мы обязательно отреагируем.
+                        </div>
+                <?php endif;?>                
+                <hr>
+                <div class="row">
+                    <div class="col-lg-10">
+                        <?php $form = ActiveForm::begin(['id' => 'feedback-form']); ?>
+                            <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+                            <?= $form->field($model, 'email') ?>
+                            <?= $form->field($model, 'subject') ?>
+                            <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
+                            <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+                                'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+                            ]) ?>
+                            <div class="form-group">
+                                <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                            </div>
+                        <?php ActiveForm::end(); ?>
+                    </div>
+                </div>
 
 </div>
