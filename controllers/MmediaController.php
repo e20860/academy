@@ -3,9 +3,49 @@
 namespace app\controllers;
 
 use app\models\Galleries;
+use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 class MmediaController extends \yii\web\Controller
 {
+    /**
+     * Поведения (доступ)
+     * @return type
+     */
+        public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['gals','meet','video','show'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['gals','meet','video','show'],
+                        'roles' => ['@'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['logout'],
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            
+        ];
+    }
+
+    /**
+     *  Выводит список галерей для просмотра
+     * @return html
+     */
+    
     public function actionGals()
     {
         $galleries = Galleries::find()
@@ -18,6 +58,10 @@ class MmediaController extends \yii\web\Controller
         ]);
     }
 
+    /**
+     * Выводит галерею встречи выпускников
+     * @return type
+     */
     public function actionMeet()
     {
         $gallery = Galleries::findOne(12);
@@ -28,6 +72,10 @@ class MmediaController extends \yii\web\Controller
         ]);
     }
 
+    /**
+     * Выводит перечень имеющихся видео доя просмотра
+     * @return type
+     */
     public function actionVideo()
     {
         $videos = \app\models\Video::find()
@@ -37,7 +85,11 @@ class MmediaController extends \yii\web\Controller
             'videos' => $videos,
         ]);
     }
-    
+    /**
+     * Выводит фотографии одной галереи по её ID (параметр)
+     * @param type $id integer
+     * @return html
+     */
     public function actionShow($id)
     {
         $gallery = Galleries::findOne($id);

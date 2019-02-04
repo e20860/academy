@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\FeedbackForm;
 use app\models\EntryForm;
 
 class SiteController extends Controller
@@ -124,7 +125,15 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        $model = new FeedbackForm();
+        if ($model->load(Yii::$app->request->post()) && $model->feedback(Yii::$app->params['adminEmail'])) {
+            Yii::$app->session->setFlash('feedbackFormSubmitted');
+
+            return $this->refresh();
+        }
+        return $this->render('about', [
+            'model' => $model,
+        ]);
     }
     /**
      * Displays message
