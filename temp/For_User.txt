@@ -1,0 +1,60 @@
+Примочки для User
+--------------------------
+Model BeforeSave
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if (!empty($this->newPassword)) {
+                $this->setPassword($this->newPassword);
+            }
+            return true;
+        }
+        return false;
+    }
+-----------------------------------------------------
+Columns in GridView
+            ['attribute' =>'graduates_id',
+                //'value' =>  'graduates.fam',
+                'format' => 'text',
+                'content' =>function($data){
+                    return $data->getGradName();
+                },
+                'filter' => Graduates::find()->select('fam')->column(),
+                
+            ],
+*----------
+ActionColumn
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'header' => 'Действия',
+                'buttons' => [
+                    'view' => function ($url, $model) {
+                        return Html::a('<span class="btn btn-primary btn-sm">o</span>', $url, [
+                            'title' => 'Посмотреть',
+                        ]);
+                    },
+                    'update' => function ($url, $model) {
+                        return Html::a('<span class="btn btn-secondary btn-sm">/</span>', $url, [
+                            'title' => 'Изменить',
+                        ]);
+                    },
+                    'delete' => function ($url, $model) {
+                        return Html::a('<span class="btn btn-danger btn-sm">x</span>', $url, [
+                            'title' => 'Удалить',
+                            'data' => [
+                                'method' => 'post',
+                                'confirm' =>'Вы уверены, что хотите удалить?',
+                            ]
+                        ]);
+                    },
+                ],                
+          ],
+-----------------------------------------------------------------
+_form field DropdownList
+    <?php 
+        $graduates = \app\models\Graduates::find()->select([ 'id','fam'])->asArray()->all();
+        $items =  ArrayHelper::map($graduates,'id','fam');
+        echo $form->field($model, 'graduates_id')->dropdownList($items ,
+        ['prompt'=>'Выберите выпускника'] ); 
+    ?>
+

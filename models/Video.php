@@ -29,10 +29,11 @@ class Video extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ord', 'descr', 'link'], 'required'],
+            [['descr', 'link'], 'required'],
             [['ord'], 'integer'],
             [['descr'], 'string'],
             [['link'], 'string', 'max' => 255],
+            [['ord'], 'safe'],
         ];
     }
 
@@ -42,11 +43,11 @@ class Video extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'ord' => 'Ord',
-            'name' => 'Name',
-            'descr' => 'Descr',
-            'link' => 'Link',
+            'id' => '№пп',
+            'ord' => 'Порядок',
+            'name' => 'Наименование',
+            'descr' => 'Описание',
+            'link' => 'Ссылка',
         ];
     }
 }

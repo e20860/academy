@@ -49,11 +49,11 @@ class User extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'graduates_id' => 'Graduates ID',
-            'username' => 'Username',
-            'password' => 'Password',
-            'authkey' => 'Authkey',
-            'accesstoken' => 'Accesstoken',
+            'graduates_id' => 'Выпускник',
+            'username' => 'Имя пользователя',
+            'password' => 'Пароль',
+            'authkey' => 'Авторизация',
+            'accesstoken' => 'Ключ доступа',
         ];
     }
 
@@ -64,4 +64,18 @@ class User extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Graduates::className(), ['id' => 'graduates_id']);
     }
+    
+    public function getGradName()
+    {
+        $grad = $this->getGraduates()->asArray()->one();
+        return $grad['fam'];
+    }
+        /**
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = Yii::$app->security->generatePasswordHash($password);
+    }
+    
 }

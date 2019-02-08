@@ -46,10 +46,10 @@ class Units extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'ord' => 'Ord',
-            'name' => 'Name',
-            'descr' => 'Descr',
-            'commander' => 'Commander',
+            'ord' => 'Порядок',
+            'name' => 'Наименование',
+            'descr' => 'Описание',
+            'commander' => 'Командир',
         ];
     }
 
@@ -59,5 +59,12 @@ class Units extends \yii\db\ActiveRecord
     public function getGraduates()
     {
         return $this->hasMany(Graduates::className(), ['units_id' => 'id']);
+    }
+    
+    public function getCmdr()
+    {
+        //$person = Graduates::findOne('commander');
+        //return $person['fam'] . '. ' . substr($person['nam'],0,1);
+        return $this->hasOne(Graduates::className(),['id' => 'commander']);
     }
 }
