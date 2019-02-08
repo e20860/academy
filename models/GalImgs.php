@@ -42,9 +42,9 @@ class GalImgs extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'gallery' => 'Gallery',
-            'img' => 'Img',
+            'id' => 'Идентификатор',
+            'gallery' => '№ галереи',
+            'img' => 'Имя файла',
         ];
     }
 

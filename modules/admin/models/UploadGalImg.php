@@ -16,26 +16,25 @@ class UploadGalImg extends Model
     /**
      * @var UploadedFile[]
      */
-    public $imageFiles;
+    public $imageFile;
 
     public function rules()
     {
         return [
-            [['imageFiles'], 'file', 
+            [['imageFile'], 'file', 
                 'skipOnEmpty' => false, 
-                'extensions' => 'png, jpg', 
-                'maxFiles' => 4
+                'extensions' => 'png, jpg, jpeg', 
             ],
         ];
     }
     
     public function upload()
     {
-        $path = Yii::$app->basePath . '/web/img/gal';
-        if ($this->validate()) { 
-            foreach ($this->imageFiles as $file) {
-                $file->saveAs($path . $file->baseName . '.' . $file->extension);
-            }
+       $path = Yii::$app->basePath . '/web/img/gal';
+       if ($this->validate()) {
+            $this->imageFile->saveAs($path 
+                    . $this->imageFile->baseName 
+                    . '.' . $this->imageFile->extension);
             return true;
         } else {
             return false;

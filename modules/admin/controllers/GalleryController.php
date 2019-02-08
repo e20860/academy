@@ -10,6 +10,7 @@ use app\modules\admin\models\GalleriesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\data\ActiveDataProvider;
 
 /**
  * GalleryController implements the CRUD actions for Galleries model.
@@ -87,7 +88,14 @@ class GalleryController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $images = $model->galImgs;
+        $images = new ActiveDataProvider([
+            'query' => GalImgs::find()->where(['gallery' => $id]),
+            'pagination' => [
+                'pageSize' => 30,
+            ],
+        ]);
+        $upimg = new UploadGalImg();
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
@@ -95,7 +103,34 @@ class GalleryController extends Controller
         return $this->render('update', [
             'model' => $model,
             'images' => $images,
+            'upimg' => $upimg,
         ]);
+    }
+    
+    public function actionDelpic($id,$gal)
+    {
+        $imgRec = GalImgs::findOne($id);
+        $imgRec->delete();
+        return $this->redirect(['update', 'id' => $gal]);
+    }
+
+    public function actionUploadpic()
+    {
+        $key = Yii::$app->request->post();
+        $gal = $key['idmodel'];
+        $path = Yii::$app->basePath . '.web/img/gal';
+        $fname = $_FILES['file']['name'];
+        if (0 < $_FILES['file']['error']) {
+            return 'Ошибка: ' . $_FILES['file']['error'] . '<br>';
+        } else {
+            move_uploaded_file($_FILES['file']['tmp_name'], $path . $_FILES['file']['name']);
+            $gif = new GalImgs();
+            $gif->gallery = $gal;
+            $gif->img = $fname;
+            $gif->save();
+         }
+         return $this->redirect(['update','id' =>$gal]);
+
     }
 
     /**
