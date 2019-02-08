@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-//use app\models\User;
+use Yii;
 
 class UserIdentity extends User implements \yii\web\IdentityInterface
 {
@@ -48,6 +48,11 @@ class UserIdentity extends User implements \yii\web\IdentityInterface
     {
         return $this->authkey;
     }
+    
+    public function getAccessToken()
+    {
+        return $this->accesstoken;
+    }
 
     /**
      * {@inheritdoc}
@@ -65,6 +70,8 @@ class UserIdentity extends User implements \yii\web\IdentityInterface
      */
     public function validatePassword($password)
     {
-        return $this->password === $password;
+        //$hash = Yii::$app->security->generatePasswordHash($password);
+        //return $this->password === $$hash;
+        return Yii::$app->getSecurity()->validatePassword($password, $this->password);
     }
 }

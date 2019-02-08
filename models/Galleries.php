@@ -11,7 +11,7 @@ use Yii;
  * @property string $name
  * @property int $units_id
  * @property int $ord
- * @property string $desct
+ * @property string $descr
  *
  * @property GalImgs[] $galImgs
  */
@@ -31,9 +31,9 @@ class Galleries extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'units_id', 'ord', 'desct'], 'required'],
+            [['name', 'units_id', 'ord', 'descr'], 'required'],
             [['units_id', 'ord'], 'integer'],
-            [['desct'], 'string'],
+            [['descr'], 'string'],
             [['name'], 'string', 'max' => 255],
         ];
     }
@@ -44,11 +44,11 @@ class Galleries extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'units_id' => 'Units ID',
-            'ord' => 'Ord',
-            'desct' => 'Desct',
+            'id' => '№пп',
+            'name' => 'Наименование',
+            'units_id' => 'Привязка к отделению',
+            'ord' => 'Порядок показа',
+            'descr' => 'Описание',
         ];
     }
 
