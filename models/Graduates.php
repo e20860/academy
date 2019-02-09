@@ -64,7 +64,7 @@ class Graduates extends \yii\db\ActiveRecord
             'photo1' => 'Фото №1',
             'photo2' => 'Фото №2',
             'info' => 'Информация',
-            'rip' => 'RIP',
+            'rip' => 'Состояние',
             'locals_id' => 'Проживает',
         ];
     }

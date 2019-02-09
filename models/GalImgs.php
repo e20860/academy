@@ -31,7 +31,10 @@ class GalImgs extends \yii\db\ActiveRecord
         return [
             [['gallery', 'img'], 'required'],
             [['gallery'], 'integer'],
-            [['img'], 'string', 'max' => 255],
+            [['img'], 'file', 
+                'skipOnEmpty' => false, 
+                'extensions' => 'png, jpg, jpeg', 
+            ],
             [['gallery'], 'exist', 'skipOnError' => true, 'targetClass' => Galleries::className(), 'targetAttribute' => ['gallery' => 'id']],
         ];
     }
@@ -55,4 +58,16 @@ class GalImgs extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Galleries::className(), ['id' => 'gallery']);
     }
+    
+    public function upload()
+    {
+       $path = Yii::$app->basePath . '/web/img/gal';
+       if ($this->validate()) {
+            $this->img->saveAs($path . $this->img->baseName . '.' . $this->img->extension);
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
 }

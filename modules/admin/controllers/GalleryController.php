@@ -31,7 +31,20 @@ class GalleryController extends Controller
             ],
         ];
     }
+    /**
+     *  Отключает проверку при загрузке AJAX
+     * @param type $action
+     * @return type
+     */
+    public function beforeAction($action)
+    {
+        if ($action->id === 'uploadpic') {    
+            $this->enableCsrfValidation = false;
+        }
+        return parent::beforeAction($action);
+    } 
 
+    
     /**
      * Lists all Galleries models.
      * @return mixed
@@ -55,8 +68,16 @@ class GalleryController extends Controller
      */
     public function actionView($id)
     {
+        $images = new ActiveDataProvider([
+            'query' => GalImgs::find()->where(['gallery' => $id]),
+            'pagination' => [
+                'pageSize' => 30,
+            ],
+        ]);
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'images' => $images,
         ]);
     }
 
@@ -118,16 +139,21 @@ class GalleryController extends Controller
     {
         $key = Yii::$app->request->post();
         $gal = $key['idmodel'];
-        $path = Yii::$app->basePath . '.web/img/gal';
-        $fname = $_FILES['file']['name'];
-        if (0 < $_FILES['file']['error']) {
-            return 'Ошибка: ' . $_FILES['file']['error'] . '<br>';
+        $path = Yii::$app->basePath . '/web/img/gal/';
+        $fname = $_FILES['imgFile']['name'];
+        //return json_encode($gal);
+        if (0 < $_FILES['imgFile']['error']) {
+            return 'Ошибка: ' . $_FILES['imgFile']['error'] . '<br>';
         } else {
-            move_uploaded_file($_FILES['file']['tmp_name'], $path . $_FILES['file']['name']);
+            move_uploaded_file($_FILES['imgFile']['tmp_name'], $path . $_FILES['imgFile']['name']);
             $gif = new GalImgs();
             $gif->gallery = $gal;
-            $gif->img = $fname;
-            $gif->save();
+            $gif->img = $fname;     //UploadedFile::getInstanceByName($fname);
+//            if ($gif->upload()) {
+//                $gif->save(false);
+//            }                   
+            $gif->save(false);
+            echo 'Файл загружен';
          }
          return $this->redirect(['update','id' =>$gal]);
 

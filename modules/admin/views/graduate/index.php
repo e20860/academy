@@ -2,22 +2,24 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use app\models\Graduates;
 use yii\helpers\ArrayHelper;
+use app\models\Units;
+use app\models\Locals;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\modules\admin\models\UserSearch */
+/* @var $searchModel app\modules\admin\models\GraduatesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Пользователи сайта';
-//$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Выпускники';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-index">
+<div class="graduates-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
     <p>
-        <?= Html::a('Добавить нового', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить выпускника', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -26,20 +28,27 @@ $this->title = 'Пользователи сайта';
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            ['attribute' =>'graduates_id',
-                //'value' =>  'graduates.fam',
-                'format' => 'text',
-                'content' =>function($data){
-                    return $data->getGradName();
-                },
-                'filter' => ArrayHelper::map(Graduates::find()->all(), 'id', 'fam'),
+            //'id',
+            [
+                'attribute' => 'units_id',
+                'value' => 'unit.name',
+                'filter' => ArrayHelper::map(Units::find()->all(), 'id', 'name'),
             ],
-            'username',
-            //'password',
-            //'authkey',
-            //'accesstoken',
+            'fam',
+            'nam',
+            'sur',
+            //'photo1',
+            //'photo2',
+            //'info:ntext',
+            //'rip',
+            [
+                'attribute' => 'locals_id',
+                'value' => 'local.town',
+                'filter' => ArrayHelper::map(Locals::find()->all(), 'id', 'town'),
+            ],
+            
 
-                        [
+            [
                 'class' => 'yii\grid\ActionColumn',
                 'header' => 'Действия',
                 'buttons' => [
@@ -63,7 +72,7 @@ $this->title = 'Пользователи сайта';
                         ]);
                     },
                 ],                
-          ],
+            ],
 
         ],
     ]); ?>

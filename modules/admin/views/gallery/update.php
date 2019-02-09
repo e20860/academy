@@ -85,13 +85,11 @@ $this->params['breadcrumbs'][] = 'Update';
 <?php
 $script = "
     $('#imgFile').on('change',function(e){
-        //var formData = new FormData($(this).prop('files')[0]);
-
+        var idmodel = $('#idmodel').val();
         var file_data = $('#imgFile').prop('files')[0];
         var formData = new FormData();
         formData.append('imgFile', file_data);
-        
-        console.log(formData);
+        formData.append('idmodel', idmodel);
         $.ajax({
             type: 'post',
             url:'/admin/gallery/uploadpic',
@@ -100,7 +98,10 @@ $script = "
             contentType: false,
             processData: false,
             success: function(data) {
-                 alert('Файл загружен');
+                 console.log(data);
+            },
+            error: function(e){
+                console.log(e);
             }
         })  
         e.preventDefault();

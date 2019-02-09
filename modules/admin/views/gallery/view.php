@@ -2,12 +2,13 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Galleries */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Galleries', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '/ Галереи / ', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -16,11 +17,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Править', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Вы действительно хотите удалить галерею?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -36,5 +37,37 @@ $this->params['breadcrumbs'][] = $this->title;
             'descr:ntext',
         ],
     ]) ?>
+    <hr>
+    <p class="h1 text-center">Фотографии, входящие в галерею</p>
+    <hr>
+    <div class="row">
+        <div class="col-sm-8">
+        <?php 
+            echo GridView::widget([
+                'dataProvider' => $images,
+                'columns' => [
+                  'id',
+                  'img',
+                   [
+                      'attribute' => 'img',
+                      'label' => 'Картинка',
+                      'format' => 'html',
+                      'value' => function($model, $key, $index, $column) {
+                        return Html::img('/web/img/gal/' . $model->img,[
+                            'width' => '50px', 'style' => 'max-width:100%'
+                            ]);
+                      }
+                   ],
+                           
+                ],
+            ]);
+        ?>
+        </div>
+        <div class="col-sm-4">
+            
+        </div>
+
+    </div>
+    
 
 </div>

@@ -23,7 +23,7 @@ class Menu21 extends \yii\db\ActiveRecord
             ['label' => 'Главная админки', 'url' => ['/admin']],
             ['label' => 'Пользователи', 'url' => ['/admin/users']],                
             ['label' => 'Отделения', 'url' => ['/admin/unit']],
-            ['label' => 'Выпускники', 'url' => ['#']],
+            ['label' => 'Выпускники', 'url' => ['/admin/graduate']],
             ['label' => 'Фотогалереи', 'url' => ['/admin/gallery']],
             ['label' => 'Видео', 'url' => ['/admin/video']],
             ['label' => 'Города', 'url' => ['/admin/local']],
