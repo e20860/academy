@@ -47,7 +47,7 @@ class Achievs extends \yii\db\ActiveRecord
     {
         return [
             'id' => '№',
-            'graduates_id' => 'Выпукник',
+            'graduates_id' => 'Выпускник',
             'type' => 'Достижение',
             'descr' => 'Описание',
         ];

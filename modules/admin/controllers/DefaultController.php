@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use Yii;
 use yii\web\Controller;
 
 /**
@@ -15,6 +16,17 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
+        $this->testUser();
         return $this->render('index');
     }
+
+    protected function testUser() 
+    {
+        $access = Yii::$app->user->getIdentity()['accesstoken'];
+        if(Yii::$app->user->isGuest || ($access != 'maa94-admin')) {
+            $this->goHome();
+        }
+        
+    }
+    
 }

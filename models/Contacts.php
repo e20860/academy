@@ -46,9 +46,9 @@ class Contacts extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'type' => 'Type',
-            'graduates_id' => 'Graduates ID',
-            'cont_info' => 'Cont Info',
+            'type' => 'Тип контакта',
+            'graduates_id' => 'Выпускник',
+            'cont_info' => 'Содержание',
         ];
     }
 
@@ -63,7 +63,7 @@ class Contacts extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getType0()
+    public function getCntType()
     {
         return $this->hasOne(CntTypes::className(), ['id' => 'type']);
     }

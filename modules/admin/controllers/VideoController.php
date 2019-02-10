@@ -35,6 +35,7 @@ class VideoController extends Controller
      */
     public function actionIndex()
     {
+        $this->testUser();
         $searchModel = new VideoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -127,4 +128,12 @@ class VideoController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+    protected function testUser() 
+    {
+        $access = Yii::$app->user->getIdentity()['accesstoken'];
+        if(Yii::$app->user->isGuest || ($access != 'maa94-admin')) {
+            $this->goHome();
+        }
+        
+    }    
 }

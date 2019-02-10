@@ -3,16 +3,16 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\models\graduates;
-use app\modules\admin\models\GraduatesSearch;
+use app\models\Achievs;
+use app\modules\admin\models\AchievSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * GraduateController implements the CRUD actions for graduates model.
+ * AchievController implements the CRUD actions for Achievs model.
  */
-class GraduateController extends Controller
+class AchievController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -29,22 +29,14 @@ class GraduateController extends Controller
         ];
     }
 
-    public function beforeAction($action)
-    {
-        if ($action->id === 'uploadpic') {    
-            $this->enableCsrfValidation = false;
-        }
-        return parent::beforeAction($action);
-    } 
-
     /**
-     * Lists all graduates models.
+     * Lists all Achievs models.
      * @return mixed
      */
     public function actionIndex()
     {
         $this->testUser();
-        $searchModel = new GraduatesSearch();
+        $searchModel = new AchievSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -54,7 +46,7 @@ class GraduateController extends Controller
     }
 
     /**
-     * Displays a single graduates model.
+     * Displays a single Achievs model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -67,13 +59,13 @@ class GraduateController extends Controller
     }
 
     /**
-     * Creates a new graduates model.
+     * Creates a new Achievs model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new graduates();
+        $model = new Achievs();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -85,7 +77,7 @@ class GraduateController extends Controller
     }
 
     /**
-     * Updates an existing graduates model.
+     * Updates an existing Achievs model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -103,25 +95,9 @@ class GraduateController extends Controller
             'model' => $model,
         ]);
     }
-    /**
-     *  Сохраняет файл портрета выпускника по AJAX-запросу
-     * @return string
-     */
-    public function actionUploadpic()
-    {
-        $path = Yii::$app->basePath . '/web/img/portr/';
-        $fname = $_FILES['imgFile']['name'];
-        if (0 < $_FILES['imgFile']['error']) {
-            return 'Ошибка: ' . $_FILES['imgFile']['error'] . '<br>';
-        } else {
-            move_uploaded_file($_FILES['imgFile']['tmp_name'], $path . $fname);
-            return $fname;
-        }
-         
-    }
 
     /**
-     * Deletes an existing graduates model.
+     * Deletes an existing Achievs model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -135,21 +111,20 @@ class GraduateController extends Controller
     }
 
     /**
-     * Finds the graduates model based on its primary key value.
+     * Finds the Achievs model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return graduates the loaded model
+     * @return Achievs the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = graduates::findOne($id)) !== null) {
+        if (($model = Achievs::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-    
     protected function testUser() 
     {
         $access = Yii::$app->user->getIdentity()['accesstoken'];

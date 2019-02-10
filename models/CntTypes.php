@@ -40,7 +40,7 @@ class CntTypes extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
+            'name' => 'Наименование контакта',
         ];
     }
 

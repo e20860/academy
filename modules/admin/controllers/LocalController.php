@@ -35,6 +35,7 @@ class LocalController extends Controller
      */
     public function actionIndex()
     {
+        $this->testUser();
         $searchModel = new LocalsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -124,4 +125,14 @@ class LocalController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+    
+    protected function testUser() 
+    {
+        $access = Yii::$app->user->getIdentity()['accesstoken'];
+        if(Yii::$app->user->isGuest || ($access != 'maa94-admin')) {
+            $this->goHome();
+        }
+        
+    }
+    
 }

@@ -51,6 +51,7 @@ class GalleryController extends Controller
      */
     public function actionIndex()
     {
+        $this->testUser();
         $searchModel = new GalleriesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -188,4 +189,13 @@ class GalleryController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    protected function testUser() 
+    {
+        $access = Yii::$app->user->getIdentity()['accesstoken'];
+        if(Yii::$app->user->isGuest || ($access != 'maa94-admin')) {
+            $this->goHome();
+        }
+        
+    }   
 }

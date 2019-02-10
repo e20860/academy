@@ -41,9 +41,9 @@ class AcvTypes extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'ord' => 'Ord',
-            'name' => 'Name',
+            'id' => 'Идентификатор',
+            'ord' => 'Порядок',
+            'name' => 'Вид достижения',
         ];
     }
 
